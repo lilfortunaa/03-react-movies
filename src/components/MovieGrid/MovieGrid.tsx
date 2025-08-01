@@ -2,12 +2,12 @@ import React from "react";
 import type { Movie } from "../../types/movie";
 import css from "./MovieGrid.module.css";
 
-interface Props {
+interface MovieGridProps {
   movies: Movie[];
   onSelect: (movie: Movie) => void;
 }
 
-const MovieGrid: React.FC<Props> = ({ movies, onSelect }) => {
+const MovieGrid: React.FC<MovieGridProps> = ({ movies, onSelect }) => {
   if (!movies.length) return null;
 
   return (
