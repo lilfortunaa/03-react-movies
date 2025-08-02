@@ -1,11 +1,11 @@
 import toast from "react-hot-toast";
 import styles from "./SearchBar.module.css";
 
-interface Props {
-  onSubmit: (formData: FormData) => void;
+interface SearchBarProps {
+  onSubmit: (query: string) => void;
 }
 
-const SearchBar: React.FC<Props> = ({ onSubmit }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   const handleSubmit = (formData: FormData) => {
     const rawQuery = formData.get("query");
     const query = typeof rawQuery === "string" ? rawQuery.trim() : "";
@@ -15,7 +15,7 @@ const SearchBar: React.FC<Props> = ({ onSubmit }) => {
       return;
     }
 
-    onSubmit(formData);
+    onSubmit(query);
   };
 
   return (
