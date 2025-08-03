@@ -14,10 +14,7 @@ const App = () => {
   const [error, setError] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
-  const handleSearch = async (formData: FormData) => {
-    const rawQuery = formData.get("query");
-    const query = typeof rawQuery === "string" ? rawQuery.trim() : "";
-
+  const handleSearch = async (query: string) => {
     setLoading(true);
     setError(false);
     setMovies([]);
